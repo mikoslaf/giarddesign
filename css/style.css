@@ -1,0 +1,20 @@
+.container-arrows {
+    width: 12vw;
+    height: 6vw;
+    margin-bottom: -1px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container-arrows {
+        width: 16vw;
+        height: 8vw;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container-arrows {
+        width: 100%;
+        height: 8vw;
+        opacity: 0.5;
+    }
+}

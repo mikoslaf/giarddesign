@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid mx-5 my-1">
+        <a class="navbar-brand" href="#">
+            <img src="./img/giarddesign.svg" alt="Giarddesign">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown mx-lg-2">
+                    <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Oferta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item mx-lg-2">
+                    <a class="nav-link text-black" href="#">O firmie</a>
+                </li>
+                <li class="nav-item mx-lg-2">
+                    <a class="nav-link text-black" href="#">Realizacje</a>
+                </li>
+                <li class="nav-item mx-lg-2">
+                    <a class="nav-link text-black" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item ml-lg-2">
+                    <a class="nav-link" href="#">
+                        <img src="./img/Icon 01.svg" alt="lupa" >
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0" style="background-color: #DCC1AB;">
+    <div class="row m-0">
+      <div class="col-lg-7">
+          <div class="py-5 mx-5 d-flex flex-column justify-content-center" id="from_slider">
+            <h1 class="display-3 text-black">
+              <b> Nowoczesna <br>aranżacja <br> Twojego ogrodu </b>
+            </h1>
+
+            <p class="my-5 pr-3 w-75">
+              Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usługz indywidualnym podejściem do każdego projektu.
+            </p>
+            
+            <p>
+              <button type="button" class="btn btn-success btn-group rounded-pill p-3 me-xl-4" style="background-color:#1b5b31"> Skontaktuj się z nami </button>
+              <button type="button" class="btn btn-success btn-group rounded-pill p-3 ms-lg-4 ms-xl-5" style="background-color:#DCC1AB; color: #198754;">
+                <div class="d-flex">
+                  <span>Zobacz nasze realizacje&nbsp;</span>
+                  <img src="./img/icon2.svg" alt="icon">
+                </div>
+              </button>
+            </p>
+        </div>
+      </div>
+      <div class="col-lg-5 p-0">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner" id="to_slider">
+            <div class="carousel-item active">
+              <img src="./img/slider1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/slider1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/slider1.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="position-absolute bottom-0 end-0 bg-white container-arrows">
+            <button class="carousel-control-prev w-50" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <img class="carousel-control-prev-icon" aria-hidden="true" src="./img/Arrow1.svg" alt="Arrow">
+            </button>
+            <button class="carousel-control-next w-50" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <img class="carousel-control-next-icon" aria-hidden="true" src="./img/Arrow2.svg" alt="Arrow">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="./js/js.js"></script>
+</body>
+</html>
