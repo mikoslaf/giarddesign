@@ -4,10 +4,29 @@
     margin-bottom: -1px;
 }
 
+.grid {
+    margin-left: -1.5rem;
+    width: calc(100% + 3rem);
+    max-width: none;
+    max-height: 100vw;
+}
+
+.grid-item {
+    width: 33.33%;
+}
+
+.grid-item img {
+    width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
     .container-arrows {
         width: 16vw;
         height: 8vw;
+    }
+
+    .grid-item {
+        width: 50%;
     }
 }
 
@@ -16,5 +35,12 @@
         width: 100%;
         height: 8vw;
         opacity: 0.5;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .grid-item {
+        width: 100%;
     }
 }

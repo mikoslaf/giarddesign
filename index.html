@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Giarddesign</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -64,7 +64,7 @@
               <button type="button" class="btn btn-success btn-group rounded-pill p-3 me-xl-4" style="background-color:#1b5b31"> Skontaktuj się z nami </button>
               <button type="button" class="btn btn-success btn-group rounded-pill p-3 ms-lg-4" style="background-color:#DCC1AB; color: #198754;">
                 <div class="d-flex">
-                  <span>Zobacz nasze realizacje&nbsp;</span>
+                  <span>Zobacz nasze realizacje&nbsp;&nbsp;</span>
                   <img src="./img/icon2.svg" alt="icon">
                 </div>
               </button>
@@ -156,18 +156,22 @@
   </div>
 
   <div class="container-fluid p-0">
-    <div class="row">
-      <div class="col-sm-6 p-0">
-        <img class="w-100" src="./img/pasja.jpg" alt="pasja">
+    <div class="row m-0">
+      <div class="col-lg-6 p-0" style="
+      background-image:url('./img/pasja.jpg');
+      background-repeat:no-repeat;
+      background-size: 100% 100%;
+      background-position:center;">
+        <img class="w-100 d-lg-none" src="./img/pasja.jpg" alt="pasja">
       </div>
-      <div class="col-sm-6 d-flex align-items-center" style="background-color: #1B5B31; color: white;">
+      <div class="col-lg-6 d-flex align-items-center" style="background-color: #1B5B31; color: white;">
         <div class="m-5 ps-5">
           <p class="mb-1">O firmie</p>
           <h2 class="display-4 fw-medium">Tworzymy<br>z <i>pasją</i></h2>
           <p class="fs-6 w-75 pt-4 pb-5">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
           <button type="button" class="btn btn-success btn-group rounded-pill p-3 mt-2" style="background: none; color: white; border-color: white;">
             <div class="d-flex">
-              <span>Zobacz nasze realizacje&nbsp;</span>
+              <span>Zobacz nasze realizacje&nbsp;&nbsp;</span>
               <img class="img-fluid" src="./img/icon4.svg" alt="icon">
             </div>
           </button>
@@ -176,9 +180,69 @@
     </div>
   </div>
 
+  <div style="background-color: rgb(220, 193, 171);">
+    <div class="container pt-5 pb-4">
+      <div class="row justify-content-center">
+        <div class="col-xl-10 p-5">
+          <p class="mb-1" style="color: #1B5B31;">Realizacje</p>
+          <h2 class="display-4 mb-4 fw-medium" style="color: black;">Nasze <i>projekty</i></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row position-relative" style="overflow: hidden;">
+        <div class="position-absolute w-100 h-100 p-0" style="
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(220, 193, 171, 1) 100%);
+        z-index: 10;
+        max-height: 100vw;
+        ">
+        <div class="w-100 h-100 d-flex justify-content-center align-items-end pb-5">
+          <button type="button" class="btn btn-success btn-group rounded-pill p-3 ms-lg-4" style="background:none; color: black; border-color: black;">
+            <div class="d-flex">
+              <span>Rozwiń&nbsp;&nbsp;</span>
+              <img src="./img/icon5.svg" alt="icon">
+            </div>
+          </button>
+        </div>
+        </div>
+        <div class="grid p-0">
+          <div class="grid-item p-4">
+            <img src="./img/gallery1.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery2.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery3.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery4.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery8.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery9.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery6.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery7.jpg" alt="">
+          </div>
+          <div class="grid-item p-4">
+            <img src="./img/gallery5.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="./js/unpkg.com_masonry-layout@4.2.2_dist_masonry.pkgd.min.js"></script>
   <script src="./js/js.js"></script>
 </body>
 </html>

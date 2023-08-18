@@ -1,5 +1,9 @@
 $(function() {
     set_slider();
+
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+      });
 });
   
 $(window).resize(function () {
