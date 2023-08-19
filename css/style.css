@@ -1,46 +1,193 @@
+@keyframes slideIn {
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-s {
+    0% {
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-e {
+    0% {
+        transform: translateX(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-b {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 .container-arrows {
-    width: 12vw;
-    height: 6vw;
-    margin-bottom: -1px;
+  width: 12vw;
+  height: 6vw;
+  margin-bottom: -1px;
 }
 
 .grid {
-    margin-left: -1.5rem;
-    width: calc(100% + 3rem);
-    max-width: none;
-    max-height: 100vw;
+  margin-left: -1.5rem;
+  width: calc(100% + 3rem);
+  max-width: none;
+  max-height: 100vw;
 }
 
 .grid-item {
-    width: 33.33%;
+  width: 33.33%;
 }
 
 .grid-item img {
-    width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
-    .container-arrows {
-        width: 16vw;
-        height: 8vw;
-    }
+  .container-arrows {
+    width: 16vw;
+    height: 8vw;
+  }
 
-    .grid-item {
-        width: 50%;
-    }
+  .grid-item {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .container-arrows {
-        width: 100%;
-        height: 8vw;
-        opacity: 0.5;
-    }
+  .container-arrows {
+    width: 100%;
+    height: 8vw;
+    opacity: 0.5;
+  }
 }
 
-
 @media screen and (max-width: 576px) {
-    .grid-item {
-        width: 100%;
-    }
+  .grid-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .animate {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+  }
+}
+
+.slideIn {
+  animation-name: slideIn;
+}
+
+.form-control {
+  opacity: 0;
+  height: 0%;
+  left: -8rem;
+  top: 129%;
+  padding: 0.275rem 0.75rem;
+  transition: all 1000ms;
+  width: auto;
+  visibility: hidden;
+}
+
+.form-control-out {
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+  transition: all 1000ms;
+}
+
+.bg-img {
+  background-image: url("./../img/slider1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.box {
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.box-wrap:hover .box {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.box-wrap:hover .box:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+}
+
+.popup {
+  display: none;
+}
+.fade-s, .fade-e, .fade-b, .fade {
+    opacity: 0;
+}
+
+.fade-s-in, .fade-e-in, .fade-b-in, .fade-in {
+    opacity: 1;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fade-s-in {
+    animation-name: slide-s;
+}
+
+.fade-e-in {
+    animation-name: slide-e;
+}
+
+.fade-b-in {
+    animation-name: slide-b;
+}
+
+.fade-in {
+    animation-name: slide;
 }
