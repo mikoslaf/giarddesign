@@ -1,366 +1,607 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Giarddesign</title>
-</head>
-<body>
-  <div class="popup w-100 h-100 position-fixed" style="background-color: rgba(236, 233, 226, 0.85); z-index: 1050;">
+  </head>
+  <body>
+    <div
+      class="popup w-100 h-100 position-fixed"
+      style="background-color: rgba(236, 233, 226, 0.85); z-index: 1050"
+    >
       <div class="container-fluid h-100">
-          <div class="row h-100">
-            <div class="position-absolute w-50 h-100" id="popup-left"></div>
-            <div class="position-absolute w-50 h-100 start-50"  id="popup-right"></div>
-            
-            <div class="d-none d-lg-flex col-1 justify-content-center align-items-center" tyle="background-color: #e0ddd5;">
-              <img src="./img/Arrow1.svg" alt="Strzałka Lewo" class="w-50">
+        <div class="row h-100">
+          <div class="position-absolute w-50 h-100" id="popup-left"></div>
+          <div
+            class="position-absolute w-50 h-100 start-50"
+            id="popup-right"
+          ></div>
+
+          <div
+            class="d-none d-lg-flex col-1 justify-content-center align-items-center"
+            tyle="background-color: #e0ddd5;"
+          >
+            <img src="./img/Arrow1.svg" alt="Strzałka Lewo" class="w-50" />
+          </div>
+
+          <div class="col-12 col-lg-10 h-100 p-0">
+            <div
+              class="position-absolute top-0 end-0 text-white m-5"
+              style="height: 3.5rem; width: 3.5rem; cursor: pointer"
+            >
+              <img
+                class="m-2 w-100"
+                src="./img/x-lg.svg"
+                alt="X Wyjście"
+                id="exit"
+              />
             </div>
 
-            <div class="col-12 col-lg-10 h-100 p-0">
-              <div class="position-absolute top-0 end-0 text-white m-5" style="height: 3.5rem; width: 3.5rem; cursor: pointer;">
-                <img class="m-2 w-100" src="./img/x-lg.svg" alt="X Wyjście" id="exit">
-              </div>
-
-              <div class="h-100 d-flex justify-content-center align-items-center">
-                <img class="mh-100 mw-100"  src="./img/gallery1.jpg" alt="Obraz z galleri"  id="popup-img">
-              </div>
-            </div>
-
-            <div class="d-none d-lg-flex col-1 justify-content-center align-items-center">
-              <img src="./img/Arrow2.svg" alt="Strzałka Prawo" class="w-50">
+            <div class="h-100 d-flex justify-content-center align-items-center">
+              <img
+                class="mh-100 mw-100"
+                src="./img/gallery1.jpg"
+                alt="Obraz z galleri"
+                id="popup-img"
+              />
             </div>
           </div>
+
+          <div
+            class="d-none d-lg-flex col-1 justify-content-center align-items-center"
+          >
+            <img src="./img/Arrow2.svg" alt="Strzałka Prawo" class="w-50" />
+          </div>
         </div>
-  </div>
-  
-  <header class="navbar navbar-expand-lg fixed-top bg-white">
-    <nav class="container-fluid p-0 mx-6 my-1">
+      </div>
+    </div>
+
+    <header class="navbar navbar-expand-lg fixed-top bg-white">
+      <nav class="container-fluid p-0 mx-6 my-1">
         <a class="navbar-brand" href="#">
-            <img src="./img/giarddesign.svg" alt="Giarddesign">
+          <img src="./img/giarddesign.svg" alt="Giarddesign" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown mx-lg-3">
-                    <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Oferta
-                    </a>
-                    <div class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Oferta I</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Oferta II</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Oferta III</a>
-                    </div>
-                </li>
-                <li class="nav-item mx-lg-3">
-                    <a class="nav-link text-black" href="#">O firmie</a>
-                </li>
-                <li class="nav-item mx-lg-3">
-                    <a class="nav-link text-black" href="#">Realizacje</a>
-                </li>
-                <li class="nav-item mx-lg-3">
-                    <a class="nav-link text-black" href="#">Kontakt</a>
-                </li>
-                <li class="nav-item ms-lg-3 position-relative">
-                  <div class="d-flex align-items-center h-100">
-                    <a class="nav-link text-black" href="#"><img src="./img/Icon 01.svg" alt="lupa" id="Search-switch"></a>
-                  </div>
-                    <form class="d-flex form-control position-absolute p-0 border-0" style="background: none;" role="search">
-                      <input class="rounded" type="search" placeholder="Szukaj" aria-label="Szukaj">
-                      <button class="btn btn-outline-success bg-white overflow-hidden py-0" type="submit">
-                        Szukaj
-                      </button>
-                    </form>
-                </li>
-            </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mx-lg-3">
+              <a
+                class="nav-link dropdown-toggle text-black"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Oferta
+              </a>
+              <div
+                class="dropdown-menu animate slideIn"
+                aria-labelledby="navbarDropdown"
+              >
+                <a class="dropdown-item" href="#">Oferta I</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Oferta II</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Oferta III</a>
+              </div>
+            </li>
+            <li class="nav-item mx-lg-3">
+              <a class="nav-link text-black" href="#">O firmie</a>
+            </li>
+            <li class="nav-item mx-lg-3">
+              <a class="nav-link text-black" href="#">Realizacje</a>
+            </li>
+            <li class="nav-item mx-lg-3">
+              <a class="nav-link text-black" href="#">Kontakt</a>
+            </li>
+            <li class="nav-item ms-lg-3 position-relative">
+              <div class="d-flex align-items-center h-100">
+                <a class="nav-link text-black" href="#"
+                  ><img src="./img/Icon 01.svg" alt="lupa" id="Search-switch"
+                /></a>
+              </div>
+              <form
+                class="d-flex form-control position-absolute p-0 border-0"
+                style="background: none"
+                role="search"
+              >
+                <input
+                  class="rounded"
+                  type="search"
+                  placeholder="Szukaj"
+                  aria-label="Szukaj"
+                />
+                <button
+                  class="btn btn-outline-success bg-white overflow-hidden py-0"
+                  type="submit"
+                >
+                  Szukaj
+                </button>
+              </form>
+            </li>
+          </ul>
         </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <div class="space"></div>
+    <div class="space"></div>
 
-  <section id="carouselExample" class="carousel slide p-0" style="background-color: #DCC1AB;">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="fade-s col-lg-7 p-0 from_slider"> 
-                <div class="py-5 my-5 mx-6 d-flex flex-column justify-content-center">
+    <section
+      id="carouselExample"
+      class="carousel slide p-0"
+      style="background-color: #dcc1ab"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="fade-s col-lg-7 p-0 from_slider">
+                <div
+                  class="py-5 my-5 mx-6 d-flex flex-column justify-content-center"
+                >
                   <h1 class="display-4 fw-medium text-black">
-                    Nowoczesna <br class="d-none d-lg-block">aranżacja <br >Twojego ogrodu
+                    Nowoczesna <br class="d-none d-lg-block" />aranżacja
+                    <br />Twojego ogrodu
                   </h1>
 
                   <p class="my-5 me-sm-5 pe-sm-5 fs-6">
-                    Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.
+                    Marka GiardDesign to wieloletnie doświadczenie i wysoka
+                    estetyka realizacji. Oferujemy kompleksowy zakres usług z
+                    indywidualnym podejściem do każdego projektu.
                   </p>
-                  
+
                   <p class="d-flex d-sm-block flex-wrap align-items-end">
-                    <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4" style="background-color:#1b5b31"> Skontaktuj się z nami</button>
-                    <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4" style="background-color:#DCC1AB; color: #198754;">
+                    <button
+                      type="button"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4"
+                      style="background-color: #1b5b31"
+                    >
+                      Skontaktuj się z nami
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4"
+                      style="background-color: #dcc1ab; color: #198754"
+                    >
                       <div class="d-flex">
                         <span>Zobacz nasze realizacje&nbsp;&nbsp;</span>
-                        <img src="./img/icon2.svg" alt="icon">
+                        <img src="./img/icon2.svg" alt="icon" />
                       </div>
                     </button>
                   </p>
+                </div>
               </div>
-            </div>
-            <div class="fade col-lg-5 p-0 bg-img">
-              <div class="space-slider"></div>
+              <div class="fade col-lg-5 p-0 bg-img">
+                <div class="space-slider"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="fade-s col-lg-7 p-0 from_slider"> 
-                <div class="py-5 my-5 mx-6 d-flex flex-column justify-content-center">
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="fade-s col-lg-7 p-0 from_slider">
+                <div
+                  class="py-5 my-5 mx-6 d-flex flex-column justify-content-center"
+                >
                   <h1 class="display-3 text-black">
-                    <b> Nowoczesna <br class="d-none d-lg-block">aranżacja <br >Twojego ogrodu </b>
+                    <b>
+                      Nowoczesna <br class="d-none d-lg-block" />aranżacja
+                      <br />Twojego ogrodu
+                    </b>
                   </h1>
 
                   <p class="my-5 me-sm-5 pe-sm-5">
-                    Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.
+                    Marka GiardDesign to wieloletnie doświadczenie i wysoka
+                    estetyka realizacji. Oferujemy kompleksowy zakres usług z
+                    indywidualnym podejściem do każdego projektu.
                   </p>
-                  
+
                   <p class="d-flex d-sm-block flex-wrap align-items-end">
-                    <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4" style="background-color:#1b5b31"> Skontaktuj się z nami</button>
-                    <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4" style="background-color:#DCC1AB; color: #198754;">
+                    <button
+                      type="button"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4"
+                      style="background-color: #1b5b31"
+                    >
+                      Skontaktuj się z nami
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4"
+                      style="background-color: #dcc1ab; color: #198754"
+                    >
                       <div class="d-flex">
                         <span>Zobacz nasze realizacje&nbsp;&nbsp;</span>
-                        <img src="./img/icon2.svg" alt="icon">
+                        <img src="./img/icon2.svg" alt="icon" />
                       </div>
                     </button>
                   </p>
+                </div>
+              </div>
+              <div class="fade col-lg-5 p-0 bg-img">
+                <div class="space-slider"></div>
               </div>
             </div>
-            <div class="fade col-lg-5 p-0 bg-img">
-              <div class="space-slider"></div>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute bottom-0 end-0 bg-white container-arrows">
+        <button
+          class="carousel-control-prev w-50"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <img
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+            src="./img/Arrow1.svg"
+            alt="Arrow"
+          />
+        </button>
+        <button
+          class="carousel-control-next w-50"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <img
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+            src="./img/Arrow2.svg"
+            alt="Arrow"
+          />
+        </button>
+      </div>
+    </section>
+
+    <section class="pb-lg-5" style="background-color: #f5f0ec">
+      <div class="fade-b container pt-3 pt-lg-5 pb-4">
+        <div class="row justify-content-center">
+          <div class="col-xl-10 p-5">
+            <p class="mb-1" style="color: #1b5b31">Oferta</p>
+            <h2 class="display-5 lt-1 mb-4 fw-medium lt" style="color: black">
+              Działamy <i>kompleksowo</i>
+            </h2>
+            <p class="fs-6 w-75">
+              Oferujemy kompletną obsługę inwestycji terenów zielonych.
+              Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
+              Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w
+              życie, a na każdym etapie posłużymy radą i wieloletnim
+              doświadczeniem.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid pb-5 px-6">
+        <div class="row justify-content-around pb-5 box-wrap">
+          <div class="fade-b col-12 col-sm-10 col-md-6 col-xl-4 pe-25">
+            <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
+              <img
+                class="mb-4"
+                src="./img/icon1.png"
+                style="max-height: 2.5rem; max-width: 2.5rem"
+                alt="icon"
+              />
+              <h3 class="mb-3">Projekty</h3>
+              <p class="m-0 fs-6 mb-5">
+                Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
+                wykorzystaniem istniejącej przestrzeni.
+              </p>
+              <p class="mt-auto fs-5" style="color: #198754">
+                <span class="pb-1" style="border-bottom: 1px solid #198754">
+                  Dowiedz się więcej
+                  <img src="./img/icon3.svg" alt="icon" />
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="fade-b mt-5 mt-md-0 col-12 col-sm-10 col-md-6 col-xl-4 px-25"
+          >
+            <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
+              <img
+                class="mb-4"
+                src="./img/icon2.png"
+                style="max-height: 2.5rem; max-width: 2.5rem"
+                alt="icon"
+              />
+              <h3 class="mb-3">Wizualizacje</h3>
+              <p class="m-0 fs-6 mb-5">
+                Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego
+                spaceru animowanego w technologii 3D.
+              </p>
+              <p class="mt-auto fs-5" style="color: #198754">
+                <span class="pb-1" style="border-bottom: 1px solid #198754">
+                  Dowiedz się więcej
+                  <img src="./img/icon3.svg" alt="icon" />
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="fade-b mt-5 mt-xl-0 col-12 col-sm-10 col-md-6 col-xl-4 ps-25"
+          >
+            <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
+              <img
+                class="mb-4"
+                src="./img/icon3.png"
+                style="max-height: 2.5rem; max-width: 2.5rem"
+                alt="icon"
+              />
+              <h3 class="mb-3">Realizacje</h3>
+              <p class="m-0 fs-6 mb-5">
+                Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i
+                zaawansowanych technologii.
+              </p>
+              <p class="mt-auto fs-5" style="color: #198754">
+                <span class="pb-1" style="border-bottom: 1px solid #198754">
+                  Zobacz nasze realizacje
+                  <img src="./img/icon3.svg" alt="icon" />
+                </span>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="position-absolute bottom-0 end-0 bg-white container-arrows">
-      <button class="carousel-control-prev w-50" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <img class="carousel-control-prev-icon" aria-hidden="true" src="./img/Arrow1.svg" alt="Arrow">
-      </button>
-      <button class="carousel-control-next w-50" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <img class="carousel-control-next-icon" aria-hidden="true" src="./img/Arrow2.svg" alt="Arrow">
-      </button>
-    </div>
-  </section>
+    </section>
 
-  <section class="pb-lg-5" style="background-color: #F5F0EC;">
-    <div class="fade-b container pt-3 pt-lg-5 pb-4">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 p-5">
-          <p class="mb-1" style="color: #1B5B31;">Oferta</p>
-          <h2 class="display-5 lt-1 mb-4 fw-medium lt" style="color: black;">Działamy <i>kompleksowo</i></h2>
-          <p class="fs-6 w-75">Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie, a na każdym etapie posłużymy radą i wieloletnim doświadczeniem. </p>
+    <section class="container-fluid p-0">
+      <div class="row m-0" style="background-color: #1b5b31">
+        <div
+          class="fade col-lg-6 p-0"
+          style="
+            background-image: url('./img/pasja.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+          "
+        >
+          <img class="w-100 d-lg-none" src="./img/pasja.jpg" alt="pasja" />
         </div>
-      </div>
-    </div>
-
-    <div class="container-fluid pb-5 px-6">
-      <div class="row justify-content-around pb-5 box-wrap">
-        <div class="fade-b col-12 col-sm-10 col-md-6 col-xl-4 pe-25">
-          <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
-            <img class="mb-4" src="./img/icon1.png" style="max-height: 2.5rem; max-width: 2.5rem;" alt="icon">
-            <h3 class="mb-3">Projekty</h3>
-            <p class="m-0 fs-6 mb-5">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
-            <p class="mt-auto fs-5" style="color: #198754;">
-              <span class="pb-1" style="border-bottom: 1px solid #198754;">
-                Dowiedz się więcej
-                <img src="./img/icon3.svg" alt="icon">
-              </span>
+        <div
+          class="col-lg-6 d-flex align-items-center pe-6 ps-4 py-5"
+          style="color: white"
+        >
+          <div class="fade-e m-5 ps-5 me-lg-0">
+            <p class="mb-3 small-text">O firmie</p>
+            <h4 class="display-5 fw-medium lt">
+              Tworzymy<br class="d-none d-sm-block" />z <i>pasją</i>
+            </h4>
+            <p class="fs-6 py-5 lt-1">
+              Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą
+              wykwalifikowani projektanci oraz architekci, których zadaniem jest
+              rozpoznanie i realizacja potrzeb każdego Klienta. Nasza
+              specjalizacja to przestrzenie nowoczesne, które charakteryzuje
+              minimalizm, geometria i elegancka prostota. Tworzymy ogrody
+              małoobsługowe, dostosowane do współczesnego trybu życia.
             </p>
-          </div>
-        </div>
-
-        <div class="fade-b mt-5 mt-md-0 col-12 col-sm-10 col-md-6 col-xl-4 px-25">
-          <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
-            <img class="mb-4" src="./img/icon2.png" style="max-height: 2.5rem; max-width: 2.5rem;" alt="icon">
-            <h3 class="mb-3">Wizualizacje</h3>
-            <p class="m-0 fs-6 mb-5">Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
-            <p class="mt-auto fs-5" style="color: #198754;">
-              <span class="pb-1" style="border-bottom: 1px solid #198754;">
-                Dowiedz się więcej
-                <img src="./img/icon3.svg" alt="icon">
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="fade-b mt-5 mt-xl-0 col-12 col-sm-10 col-md-6 col-xl-4 ps-25">
-          <div class="bg-white rounded-5 p-5 h-100 d-flex flex-column box">
-            <img class="mb-4" src="./img/icon3.png" style="max-height: 2.5rem; max-width: 2.5rem;" alt="icon">
-            <h3 class="mb-3">Realizacje</h3>
-            <p class="m-0 fs-6 mb-5">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
-            <p class="mt-auto fs-5" style="color: #198754;">
-              <span class="pb-1" style="border-bottom: 1px solid #198754;">
-                Zobacz nasze realizacje
-                <img src="./img/icon3.svg" alt="icon">
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container-fluid p-0">
-    <div class="row m-0" style="background-color: #1B5B31;">
-      <div class="fade col-lg-6 p-0" style="
-      background-image:url('./img/pasja.jpg');
-      background-repeat:no-repeat;
-      background-size: 100% 100%;
-      background-position:center;">
-        <img class="w-100 d-lg-none" src="./img/pasja.jpg" alt="pasja">
-      </div>
-      <div class="col-lg-6 d-flex align-items-center pe-6 ps-4 py-5" style="color: white;">
-        <div class="fade-e m-5 ps-5 me-lg-0">
-          <p class="mb-3 small-text">O firmie</p>
-          <h4 class="display-5 fw-medium lt">Tworzymy<br class="d-none d-sm-block">z <i>pasją</i></h4>
-          <p class="fs-6 py-5 lt-1">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
-          <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 mt-2" style="background: none; color: white; border-color: white;">
-            <div class="d-flex">
-              <span>Poznaj nas bliżej&nbsp;&nbsp;</span>
-              <img class="img-fluid" src="./img/icon4.svg" alt="icon">
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background-color: rgb(220, 193, 171);">
-    <div class="fade-b container pt-5 pb-4">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 p-5">
-          <p class="mb-1 small-text" style="color: #1B5B31;">Realizacje</p>
-          <h2 class="display-5 mb-4 fw-medium lt" style="color: black;">Nasze <i>projekty</i></h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row position-relative" style="overflow: hidden;">
-        <div class="position-absolute w-100 h-75 p-0" style="
-        background: rgb(255,255,255);
-        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(220, 193, 171, 1) 100%);
-        z-index: 10;
-        top: 25%;
-        ">
-          <div class="w-100 h-100 d-flex justify-content-center align-items-end pb-5">
-            <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2 ms-lg-4" id="expand" style="background:none; color: black; border-color: black;">
+            <button
+              type="button"
+              class="btn btn-success btn-group rounded-pill padding-button-2 mt-2"
+              style="background: none; color: white; border-color: white"
+            >
               <div class="d-flex">
-                <span>Rozwiń&nbsp;&nbsp;</span>
-                <img src="./img/icon5.svg" alt="icon">
+                <span>Poznaj nas bliżej&nbsp;&nbsp;</span>
+                <img class="img-fluid" src="./img/icon4.svg" alt="icon" />
               </div>
             </button>
           </div>
         </div>
-        <div class="grid p-0">
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery1.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery2.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery3.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery4.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery8.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery9.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery6.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery7.jpg" alt="zdjęcie z galleri">
-          </div>
-          <div class="grid-item p-4">
-            <img class="fade-b" src="./img/gallery5.jpg" alt="zdjęcie z galleri">
+      </div>
+    </section>
+
+    <section style="background-color: rgb(220, 193, 171)">
+      <div class="fade-b container pt-5 pb-4">
+        <div class="row justify-content-center">
+          <div class="col-xl-10 p-5">
+            <p class="mb-1 small-text" style="color: #1b5b31">Realizacje</p>
+            <h2 class="display-5 mb-4 fw-medium lt" style="color: black">
+              Nasze <i>projekty</i>
+            </h2>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="container">
-    <div class="row my-5 justify-content-center">
-      <div class="col-lg-10 text-white p-lg-5" style="background-color: #1B5B31; ">
-          <div class="fade p-3 p-sm-4 p-xl-5 d-flex justify-content-between">
-              <h2 class="display-6 lt-2">
-                Zostańmy w kontakcie! <br class="d-none d-sm-block">
-                Znajdziesz nas na <b class="lt-3 fst-italic">Instagramie.</b>
-              </h2>
-              <div class="d-flex flex-column justify-content-between">
-                <p class="fs-6 lt-1">Śledź nasze<br class="d-none d-sm-block"> najnowsze realizacje!</p>
-                <div>
-                  <button type="button" class="btn btn-success btn-group rounded-pill padding-button-1" style="background-color: white; color: #1B5B31;">Instragram</button>
+      <div class="container-fluid">
+        <div class="row position-relative" style="overflow: hidden">
+          <div
+            class="position-absolute w-100 h-75 p-0"
+            style="
+              background: rgb(255, 255, 255);
+              background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(220, 193, 171, 1) 100%
+              );
+              z-index: 10;
+              top: 25%;
+            "
+          >
+            <div
+              class="w-100 h-100 d-flex justify-content-center align-items-end pb-5"
+            >
+              <button
+                type="button"
+                class="btn btn-success btn-group rounded-pill padding-button-2 ms-lg-4"
+                id="expand"
+                style="background: none; color: black; border-color: black"
+              >
+                <div class="d-flex">
+                  <span>Rozwiń&nbsp;&nbsp;</span>
+                  <img src="./img/icon5.svg" alt="icon" />
                 </div>
-              </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <footer style="background-color: #111;">
-    <div class="container py-5">
-      <div class="row py-4 justify-content-center">
-        <div class="col-11 col-lg-10 p-0" style="color: #F5F0EC;">
-          <div class="fade d-flex justify-content-between border-bottom pb-5 flex-wrap">
-            <img src="./img/giarddesign-white.svg" alt="Giarddesign">
-            <div class="d-flex align-items-center">
-              <p class="m-0 me-3 fs-6 lt-1">Daj znać, co możemy dla Ciebie zrobić!</p>
-              <button type="button" class="btn btn-success btn-group rounded-pill padding-button-2" style="background-color:#1b5b31"> Skontaktuj się z nami </button>
+              </button>
             </div>
           </div>
-
-          <div class="fade d-flex justify-content-between py-5 lt-4">
-            <div class="d-flex flex-wrap flex-column flex-md-row">
-              <p class="m-0 m-lg-auto">Kontakt</p>
-              <p class="my-4 my-md-0 mx-md-4 m-lg-auto mx-lg-5">Instagram</p>
-              <p class="mb-4 m-md-0 m-lg-auto">Facebook</p>
-              <p class="ms-md-4 m-lg-auto ms-lg-5">LinkedIn</p>
+          <div class="grid p-0">
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery1.jpg"
+                alt="zdjęcie z galleri"
+              />
             </div>
-            <div class="d-flex flex-column flex-lg-row">
-              <p class="mb-4 m-lg-auto">000-000-000</p>
-              <p class="m-0 m-lg-auto ps-lg-5">giarddesign@kontakt.pl</p>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery2.jpg"
+                alt="zdjęcie z galleri"
+              />
             </div>
-          </div>
-
-          <div class="fade d-flex justify-content-between pt-5 lt-4">
-            <p class="m-auto ms-0">Prawa zastrzeżone © 2022</p>
-            <div class="d-flex align-items-center">
-              <p class="mb-0 me-2">made by</p>
-              <img src="./img/logo-adrespect.svg" alt="logo-AdRespect">
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery3.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery4.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery8.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery9.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery6.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery7.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery5.jpg"
+                alt="zdjęcie z galleri"
+              />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-    
+    <section class="container">
+      <div class="row my-5 justify-content-center">
+        <div
+          class="col-lg-10 text-white p-lg-5"
+          style="background-color: #1b5b31"
+        >
+          <div class="fade p-3 p-sm-4 p-xl-5 d-flex justify-content-between">
+            <h2 class="display-6 lt-2">
+              Zostańmy w kontakcie! <br class="d-none d-sm-block" />
+              Znajdziesz nas na <b class="lt-3 fst-italic">Instagramie.</b>
+            </h2>
+            <div class="d-flex flex-column justify-content-between">
+              <p class="fs-6 lt-1">
+                Śledź nasze<br class="d-none d-sm-block" />
+                najnowsze realizacje!
+              </p>
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-success btn-group rounded-pill padding-button-1"
+                  style="background-color: white; color: #1b5b31"
+                >
+                  Instragram
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="./js/bootstrap.bundle.min.js"></script>
-  <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
-  <script src="./js/unpkg.com_masonry-layout@4.2.2_dist_masonry.pkgd.min.js"></script>
-  <script src="./js/js.js"></script>
-</body>
+    <footer style="background-color: #111">
+      <div class="container py-5">
+        <div class="row py-4 justify-content-center">
+          <div class="col-11 col-lg-10 p-0" style="color: #f5f0ec">
+            <div
+              class="fade d-flex justify-content-between border-bottom pb-5 flex-wrap"
+            >
+              <img src="./img/giarddesign-white.svg" alt="Giarddesign" />
+              <div class="d-flex align-items-center">
+                <p class="m-0 me-3 fs-6 lt-1">
+                  Daj znać, co możemy dla Ciebie zrobić!
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-success btn-group rounded-pill padding-button-2"
+                  style="background-color: #1b5b31"
+                >
+                  Skontaktuj się z nami
+                </button>
+              </div>
+            </div>
+
+            <div class="fade d-flex justify-content-between py-5 lt-4">
+              <div class="d-flex flex-wrap flex-column flex-md-row">
+                <p class="m-0 m-lg-auto">Kontakt</p>
+                <p class="my-4 my-md-0 mx-md-4 m-lg-auto mx-lg-5">Instagram</p>
+                <p class="mb-4 m-md-0 m-lg-auto">Facebook</p>
+                <p class="ms-md-4 m-lg-auto ms-lg-5">LinkedIn</p>
+              </div>
+              <div class="d-flex flex-column flex-lg-row">
+                <p class="mb-4 m-lg-auto">000-000-000</p>
+                <p class="m-0 m-lg-auto ps-lg-5">giarddesign@kontakt.pl</p>
+              </div>
+            </div>
+
+            <div class="fade d-flex justify-content-between pt-5 lt-4">
+              <p class="m-auto ms-0">Prawa zastrzeżone © 2022</p>
+              <div class="d-flex align-items-center">
+                <p class="mb-0 me-2">made by</p>
+                <img src="./img/logo-adrespect.svg" alt="logo-AdRespect" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./js/unpkg.com_masonry-layout@4.2.2_dist_masonry.pkgd.min.js"></script>
+    <script src="./js/js.js"></script>
+  </body>
 </html>

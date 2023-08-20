@@ -87,7 +87,6 @@ nav {
   letter-spacing: -0.00875rem;
 }
 
-
 .small-text {
   font-size: 0.75rem;
 }
@@ -258,12 +257,13 @@ nav {
 }
 
 @media screen and (max-width: 1200px) {
-  .px-25, .ps-25, .pe-25 {
-    padding-left: calc(1.5rem * .5);
-    padding-right: calc(1.5rem * .5);
+  .px-25,
+  .ps-25,
+  .pe-25 {
+    padding-left: calc(1.5rem * 0.5);
+    padding-right: calc(1.5rem * 0.5);
   }
 }
-
 
 @media screen and (max-width: 991px) {
   .form-control {
@@ -284,13 +284,10 @@ nav {
 
   .px-6 {
     padding-left: 3rem !important;
-    padding-right: 3rem !important; 
+    padding-right: 3rem !important;
   }
 
   .pe-6 {
     padding-right: 0 !important;
   }
 }
-
-
-
