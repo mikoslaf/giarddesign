@@ -1,4 +1,4 @@
-let imgs = [];
+const imgs = [];
 let active_img = 0;
 const lazyload = target =>
 {
@@ -29,9 +29,9 @@ $(function() {
 
     $('.grid').masonry({
         itemSelector: '.grid-item',
-      });
+    });
 
-    $("#Menu-Search").on("click", function() {
+    $("#Search-switch").on("click", function() {
         $(".form-control").toggleClass("form-control-out");
     });
 
@@ -51,6 +51,10 @@ $(function() {
 
     $("#popup-left").on("click", function(){
         set_img(-1);
+    });
+
+    $("#expand").on("click", function(){
+        expand();
     });
 });
   
@@ -109,4 +113,19 @@ function set_space()
     const space = $("header").outerHeight();
     if(space < 100)
         $(".space").css("height", space + "px");
+}
+
+function expand()
+{
+    const new_height = parseInt($(".grid").css("height")) * 2;
+    
+    $(".grid").css("max-height", new_height + "px");
+    $(".grid").css("height", new_height + "px");
+
+    for (let i = 1; i < 10; i++) {
+        const new_element = $('<div class="grid-item p-4"><img class="" src="./img/gallery'+ i +'.jpg" alt="zdjęcie z galleri"></div>');
+        $('.grid').append(new_element).masonry("appended", new_element);
+    }
+    const targets = document.querySelectorAll(".fade-b");
+    targets.forEach(lazyload);
 }
