@@ -67,6 +67,31 @@ nav {
   letter-spacing: -0.00875rem;
 }
 
+.lt {
+  letter-spacing: -0.09rem;
+}
+
+.lt-1 {
+  letter-spacing: -0.01rem;
+}
+
+.lt-2 {
+  letter-spacing: -0.125rem;
+}
+
+.lt-3 {
+  letter-spacing: 0.0625rem;
+}
+
+.lt-4 {
+  letter-spacing: -0.00875rem;
+}
+
+
+.small-text {
+  font-size: 0.75rem;
+}
+
 .container-arrows {
   width: 12vw;
   height: 6vw;
