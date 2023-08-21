@@ -218,6 +218,10 @@ nav {
   cursor: pointer;
 }
 
+.box * {
+  pointer-events: none;
+}
+
 .box_others {
   filter: blur(3px);
   opacity: 0.5;
@@ -230,6 +234,11 @@ nav {
   filter: blur(0px);
   opacity: 1;
   box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+}
+
+#container-expand {
+  z-index: 30;
+  top: calc(100% - 7rem);
 }
 
 .popup {
@@ -344,6 +353,10 @@ nav {
 
   .custom-w {
     width: 50%;
+  }
+
+  #container-expand {
+    top: calc(100% - 5rem);
   }
 }
 

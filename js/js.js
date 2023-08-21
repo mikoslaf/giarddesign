@@ -1,10 +1,13 @@
 const imgs = [];
+let $grid;
 let active_img = 0;
 let expand_on = false;
 const lazyload = (target) => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        const secondClass = entry.target.classList[1];
+        if (secondClass == "grid-item") $grid.masonry("layout");
         const newclass = entry.target.classList[0] + "-in";
         $(entry.target).addClass(newclass);
         observer.disconnect();
@@ -18,7 +21,7 @@ $(function () {
   set_slider();
   set_space();
 
-  $(".grid").masonry({
+  $grid = $(".grid").masonry({
     itemSelector: ".grid-item",
   });
 
@@ -32,12 +35,9 @@ $(function () {
 
   $(".box").hover(function (e) {
     $(".box").toggleClass("box_others");
+    $(".box").removeClass("box_selected");
     const ClassList = e.target.classList;
-    if (
-      jQuery.inArray("box", ClassList) !== -1 ||
-      jQuery.inArray("box_selected", ClassList)
-    )
-      $(e.target).toggleClass("box_selected");
+    if (ClassList[0] == "box") $(e.target).toggleClass("box_selected");
   });
 
   $("#Search-switch").on("click", function () {
