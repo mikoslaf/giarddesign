@@ -62,6 +62,10 @@ $(function () {
   $("#expand").on("click", function () {
     expand();
   });
+
+  $("#fix").on("click", function () {
+    fix_text();
+  });
 });
 
 $(window).resize(function () {
@@ -128,4 +132,11 @@ function expand() {
       scrollTop: $(".grid").offset().top
     }, 0);
   }
+}
+
+
+function fix_text()
+{
+  console.log("test");
+  $(".grid").css("width", "calc(120% + 4rem)");
 }
