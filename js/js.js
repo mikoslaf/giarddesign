@@ -30,10 +30,13 @@ $(function () {
   ];
   targets.forEach(lazyload);
 
-  $(".box").hover(function(e) {
+  $(".box").hover(function (e) {
     $(".box").toggleClass("box_others");
     const ClassList = e.target.classList;
-    if(jQuery.inArray("box", ClassList) !== -1 || jQuery.inArray("box_selected", ClassList))
+    if (
+      jQuery.inArray("box", ClassList) !== -1 ||
+      jQuery.inArray("box_selected", ClassList)
+    )
       $(e.target).toggleClass("box_selected");
   });
 
@@ -61,10 +64,6 @@ $(function () {
 
   $("#expand").on("click", function () {
     expand();
-  });
-
-  $("#fix").on("click", function () {
-    fix_text();
   });
 });
 
@@ -112,31 +111,26 @@ function set_space() {
 }
 
 function expand() {
-  expand_on = (expand_on) ? false : true;
+  expand_on = expand_on ? false : true;
   $(".grid").toggleClass("grid-long");
-  if(expand_on) {
+  if (expand_on) {
     $("#container-expand").css("top", "97%");
     $("#expand div span").html("Zwiń&nbsp;&nbsp;");
     $("#expand div img").css("transform", "rotate(180deg)");
     $("#expand").css("background", "rgba(220, 193, 171, 0.65)");
     $(".bg-gradient").css("opacity", "0.25");
     $(".bg-gradient").css("height", "30%");
-  }
-  else {
+  } else {
     $("#container-expand").css("top", "86%");
     $("#expand div span").html("Rozwiń&nbsp;&nbsp;");
     $("#expand div img").css("transform", "rotate(0deg)");
     $(".bg-gradient").css("opacity", "1");
     $("#expand").css("background", "none");
-    $([document.documentElement, document.body]).animate({
-      scrollTop: $(".grid").offset().top
-    }, 0);
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $(".grid").offset().top,
+      },
+      0
+    );
   }
-}
-
-
-function fix_text()
-{
-  console.log("test");
-  $(".grid").css("width", "calc(120% + 4rem)");
 }
