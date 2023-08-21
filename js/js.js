@@ -1,5 +1,6 @@
 const imgs = [];
 let active_img = 0;
+let expand_on = false;
 const lazyload = (target) => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -17,6 +18,10 @@ $(function () {
   set_slider();
   set_space();
 
+  $(".grid").masonry({
+    itemSelector: ".grid-item",
+  });
+
   const targets = [
     ...document.querySelectorAll(".fade-s"),
     ...document.querySelectorAll(".fade-e"),
@@ -25,8 +30,11 @@ $(function () {
   ];
   targets.forEach(lazyload);
 
-  $(".grid").masonry({
-    itemSelector: ".grid-item",
+  $(".box").hover(function(e) {
+    $(".box").toggleClass("box_others");
+    const ClassList = e.target.classList;
+    if(jQuery.inArray("box", ClassList) !== -1 || jQuery.inArray("box_selected", ClassList))
+      $(e.target).toggleClass("box_selected");
   });
 
   $("#Search-switch").on("click", function () {
@@ -100,19 +108,24 @@ function set_space() {
 }
 
 function expand() {
-  const new_height = parseInt($(".grid").css("height")) * 2;
-
-  $(".grid").css("max-height", new_height + "px");
-  $(".grid").css("height", new_height + "px");
-
-  for (let i = 1; i < 10; i++) {
-    const new_element = $(
-      '<div class="grid-item p-4"><img class="" src="./img/gallery' +
-        i +
-        '.jpg" alt="zdjęcie z galleri"></div>'
-    );
-    $(".grid").append(new_element).masonry("appended", new_element);
+  expand_on = (expand_on) ? false : true;
+  $(".grid").toggleClass("grid-long");
+  if(expand_on) {
+    $("#container-expand").css("top", "97%");
+    $("#expand div span").html("Zwiń&nbsp;&nbsp;");
+    $("#expand div img").css("transform", "rotate(180deg)");
+    $("#expand").css("background", "rgba(220, 193, 171, 0.65)");
+    $(".bg-gradient").css("opacity", "0.25");
+    $(".bg-gradient").css("height", "30%");
   }
-  const targets = document.querySelectorAll(".fade-b");
-  targets.forEach(lazyload);
+  else {
+    $("#container-expand").css("top", "86%");
+    $("#expand div span").html("Rozwiń&nbsp;&nbsp;");
+    $("#expand div img").css("transform", "rotate(0deg)");
+    $(".bg-gradient").css("opacity", "1");
+    $("#expand").css("background", "none");
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $(".grid").offset().top
+    }, 0);
+  }
 }

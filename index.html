@@ -14,20 +14,28 @@
     >
       <div class="container-fluid h-100">
         <div class="row h-100">
-          <div class="position-absolute w-50 h-100" id="popup-left"></div>
-          <div
-            class="position-absolute w-50 h-100 start-50"
-            id="popup-right"
-          ></div>
 
-          <div
-            class="d-none d-lg-flex col-1 justify-content-center align-items-center"
-            tyle="background-color: #e0ddd5;"
-          >
-            <img src="./img/Arrow1.svg" alt="Strzałka Lewo" class="w-50" />
+          <div class="position-absolute w-50 h-100 p-5 d-flex justify-content-start" id="popup-left">
+            <div
+              class="h-100 custom-w d-flex align-items-center"
+              tyle="background-color: #e0ddd5;"
+              style="cursor: pointer"
+            >
+              <img src="./img/Arrow1.svg" alt="Strzałka Lewo" class="w-50" />
+            </div>
           </div>
 
-          <div class="col-12 col-lg-10 h-100 p-0">
+          <div class="position-absolute w-50 h-100 start-50 p-5 d-flex justify-content-end" id="popup-right">
+            <div
+              class="h-100 custom-w d-flex align-items-center justify-content-end"
+              tyle="background-color: #e0ddd5;"
+              style="cursor: pointer"
+            >
+              <img src="./img/Arrow2.svg" alt="Strzałka Prawo" class="w-50" />
+            </div>
+          </div>
+
+          <div class="col-12 h-100 p-0">
             <div
               class="position-absolute top-0 end-0 text-white m-5"
               style="height: 3.5rem; width: 3.5rem; cursor: pointer"
@@ -48,12 +56,6 @@
                 id="popup-img"
               />
             </div>
-          </div>
-
-          <div
-            class="d-none d-lg-flex col-1 justify-content-center align-items-center"
-          >
-            <img src="./img/Arrow2.svg" alt="Strzałka Prawo" class="w-50" />
           </div>
         </div>
       </div>
@@ -79,7 +81,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown mx-lg-3">
               <a
-                class="nav-link dropdown-toggle text-black"
+                class="nav-link text-black d-flex align-items-center"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -88,6 +90,13 @@
                 aria-expanded="false"
               >
                 Oferta
+                <img
+                  class="ms-1"
+                  height="12px"
+                  width="12px"
+                  src="./img/chevron-down.svg"
+                  alt="Strzałka w dół"
+                />
               </a>
               <div
                 class="dropdown-menu animate slideIn"
@@ -111,7 +120,7 @@
             </li>
             <li class="nav-item ms-lg-3 position-relative">
               <div class="d-flex align-items-center h-100">
-                <a class="nav-link text-black" href="#"
+                <a class="nav-link text-black p-0" href="#"
                   ><img src="./img/Icon 01.svg" alt="lupa" id="Search-switch"
                 /></a>
               </div>
@@ -168,14 +177,14 @@
                   <p class="d-flex d-sm-block flex-wrap align-items-end">
                     <button
                       type="button"
-                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-5 me-xl-4"
                       style="background-color: #1b5b31"
                     >
                       Skontaktuj się z nami
                     </button>
                     <button
                       type="button"
-                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 mt-lg-4 mt-xl-0 ms-xl-4 me-lg-5 me-xl-0"
                       style="background-color: #dcc1ab; color: #198754"
                     >
                       <div class="d-flex">
@@ -213,14 +222,14 @@
                   <p class="d-flex d-sm-block flex-wrap align-items-end">
                     <button
                       type="button"
-                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-0 me-xl-4"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 me-2 me-md-5 me-xl-4"
                       style="background-color: #1b5b31"
                     >
                       Skontaktuj się z nami
                     </button>
                     <button
                       type="button"
-                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 ms-sm-4"
+                      class="btn btn-success btn-group rounded-pill padding-button-2 mt-4 mt-sm-0 mt-lg-4 mt-xl-0 ms-xl-4 me-lg-5 me-xl-0"
                       style="background-color: #dcc1ab; color: #198754"
                     >
                       <div class="d-flex">
@@ -369,7 +378,7 @@
           style="
             background-image: url('./img/pasja.jpg');
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
             background-position: center;
           "
         >
@@ -421,22 +430,13 @@
 
       <div class="container-fluid">
         <div class="row position-relative" style="overflow: hidden">
+          <div class="position-absolute w-100 h-75 p-0 bg-gradient"></div>
           <div
-            class="position-absolute w-100 h-75 p-0"
-            style="
-              background: rgb(255, 255, 255);
-              background: linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(220, 193, 171, 1) 100%
-              );
-              z-index: 10;
-              top: 25%;
-            "
+            class="position-absolute"
+            style="z-index: 30; top: 86%"
+            id="container-expand"
           >
-            <div
-              class="w-100 h-100 d-flex justify-content-center align-items-end pb-5"
-            >
+            <div class="d-flex justify-content-center align-items-end">
               <button
                 type="button"
                 class="btn btn-success btn-group rounded-pill padding-button-2 ms-lg-4"
@@ -451,6 +451,69 @@
             </div>
           </div>
           <div class="grid p-0">
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery1.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery2.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery3.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery4.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery8.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery9.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery6.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery7.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
+            <div class="grid-item p-4">
+              <img
+                class="fade-b"
+                src="./img/gallery5.jpg"
+                alt="zdjęcie z galleri"
+              />
+            </div>
             <div class="grid-item p-4">
               <img
                 class="fade-b"
@@ -574,10 +637,34 @@
 
             <div class="fade d-flex justify-content-between py-5 lt-4">
               <div class="d-flex flex-wrap flex-column flex-md-row">
-                <p class="m-0 m-lg-auto">Kontakt</p>
-                <p class="my-4 my-md-0 mx-md-4 m-lg-auto mx-lg-5">Instagram</p>
-                <p class="mb-4 m-md-0 m-lg-auto">Facebook</p>
-                <p class="ms-md-4 m-lg-auto ms-lg-5">LinkedIn</p>
+                <p class="m-0 m-lg-auto">
+                  <a
+                    class="link-underline link-underline-opacity-0 text-white"
+                    href="#"
+                    >Kontakt</a
+                  >
+                </p>
+                <p class="my-4 my-md-0 mx-md-4 m-lg-auto mx-lg-5">
+                  <a
+                    class="link-underline link-underline-opacity-0 text-white"
+                    href="#"
+                    >Instagram</a
+                  >
+                </p>
+                <p class="mb-4 m-md-0 m-lg-auto">
+                  <a
+                    class="link-underline link-underline-opacity-0 text-white"
+                    href="#"
+                    >Facebook</a
+                  >
+                </p>
+                <p class="ms-md-4 m-lg-auto ms-lg-5">
+                  <a
+                    class="link-underline link-underline-opacity-0 text-white"
+                    href="#"
+                    >LinkedIn</a
+                  >
+                </p>
               </div>
               <div class="d-flex flex-column flex-lg-row">
                 <p class="mb-4 m-lg-auto">000-000-000</p>
@@ -589,7 +676,9 @@
               <p class="m-auto ms-0">Prawa zastrzeżone © 2022</p>
               <div class="d-flex align-items-center">
                 <p class="mb-0 me-2">made by</p>
-                <img src="./img/logo-adrespect.svg" alt="logo-AdRespect" />
+                <a class="link-underline link-underline-opacity-0" href=""
+                  ><img src="./img/logo-adrespect.svg" alt="logo-AdRespect"
+                /></a>
               </div>
             </div>
           </div>

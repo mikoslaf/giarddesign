@@ -61,6 +61,18 @@
   }
 }
 
+@keyframes grid {
+  0% {
+    opacity: 0;
+    max-height: 100vw;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 100%;
+  }
+}
+
 nav {
   font-size: 0.875rem;
   line-height: 150%; /* 1.3125rem */
@@ -103,6 +115,14 @@ nav {
   max-width: none;
   max-height: 100vw;
   transition: all 1000ms;
+}
+
+.grid-long {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: grid;
+  transition: all 1000ms;
+  max-height: 100%;
 }
 
 .grid-item {
@@ -171,19 +191,20 @@ nav {
   cursor: pointer;
 }
 
-.box-wrap:hover .box {
+.box_others {
   filter: blur(3px);
   opacity: 0.5;
   transform: scale(0.98);
   box-shadow: none;
 }
 
-.box-wrap:hover .box:hover {
+.box_selected {
   transform: scale(1);
   filter: blur(0px);
   opacity: 1;
   box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
 }
+
 
 .popup {
   display: none;
@@ -256,6 +277,10 @@ nav {
   padding-right: 2rem;
 }
 
+.custom-w {
+  width: 25%;
+}
+
 @media screen and (max-width: 1200px) {
   .px-25,
   .ps-25,
@@ -290,4 +315,26 @@ nav {
   .pe-6 {
     padding-right: 0 !important;
   }
+
+  .custom-w {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .custom-w {
+    width: 100%;
+  }
+}
+
+.bg-gradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(220, 193, 171, 1) 100%
+  ) !important;
+  z-index: 10;
+  top: 25%;
+  pointer-events: none;
 }
