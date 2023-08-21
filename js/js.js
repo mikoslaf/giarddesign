@@ -114,14 +114,12 @@ function expand() {
   expand_on = expand_on ? false : true;
   $(".grid").toggleClass("grid-long");
   if (expand_on) {
-    $("#container-expand").css("top", "97%");
     $("#expand div span").html("Zwiń&nbsp;&nbsp;");
     $("#expand div img").css("transform", "rotate(180deg)");
     $("#expand").css("background", "rgba(220, 193, 171, 0.65)");
     $(".bg-gradient").css("opacity", "0.25");
     $(".bg-gradient").css("height", "30%");
   } else {
-    $("#container-expand").css("top", "86%");
     $("#expand div span").html("Rozwiń&nbsp;&nbsp;");
     $("#expand div img").css("transform", "rotate(0deg)");
     $(".bg-gradient").css("opacity", "1");
