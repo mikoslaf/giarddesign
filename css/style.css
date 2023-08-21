@@ -39,9 +39,33 @@
   }
 }
 
+@keyframes slide-el {
+  0% {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+}
+
 @keyframes slide-b {
   0% {
     transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-t {
+  0% {
+    transform: translateY(-2rem);
     opacity: 0;
   }
 
@@ -163,20 +187,23 @@ nav {
 }
 
 .form-control {
-  opacity: 0;
-  height: 0%;
   left: -14rem;
   top: 129%;
   transition: all 1000ms;
   width: auto;
   visibility: hidden;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: slide-el;
 }
 
 .form-control-out {
-  opacity: 1;
-  height: 100%;
   visibility: visible;
   transition: all 1000ms;
+  opacity: 1;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: slide-s;
 }
 
 .bg-img {
